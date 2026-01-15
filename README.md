@@ -3,7 +3,7 @@ Churn prediction with Machine Learning, Azure SQL and Power BI
 Este projeto tem como objetivo identificar clientes com maior risco de churn em um negócio de assinatura, utilizando técnicas de Ciência de Dados e Machine Learning.
 Além da construção dos modelos preditivos, o projeto enfatiza interpretabilidade, integração com cloud (Azure SQL) e visualização executiva (Power BI), simulando um cenário corporativo real.
 
-Problema de Negócio
+## Problema de Negócio
 
 Em empresas baseadas em assinatura, o churn impacta diretamente a receita recorrente.
 Dessa forma, o desafio é responder às seguintes perguntas:
@@ -13,7 +13,7 @@ Dessa forma, o desafio é responder às seguintes perguntas:
 - Como priorizar ações de retenção de forma eficiente?
 - O foco do projeto é apoiar decisões de negócio, e não apenas maximizar métricas técnicas.
 
-Abordagem Analítica
+## Abordagem Analítica
 
 O projeto foi desenvolvido seguindo um fluxo completo de Ciência de Dados:
 
@@ -36,22 +36,43 @@ O projeto foi desenvolvido seguindo um fluxo completo de Ciência de Dados:
 - Persistência em banco de dados na nuvem (Azure SQL Database)
 - Consumo via Power BI para visualização executiva
 
-Arquitetura do Projeto
+## 🧩 Arquitetura da Solução
 
-Jupyter Notebook (Python)
-        ↓
-Modelo de Machine Learning (Random Forest)
-        ↓
-Exportação de Scoring (CSV)
-        ↓
-Azure SQL Database
-        ↓
-Power BI Dashboard
+O projeto foi estruturado em camadas, simulando um fluxo real de apoio à decisão
+em um ambiente corporativo, desde a análise dos dados até a visualização executiva.
 
-Essa arquitetura simula um pipeline real de apoio à decisão, sem complexidade excessiva de engenharia de dados.
+### Visão Geral
+
+┌───────────────────────────────┐
+│        Data Science Layer     │
+│                               │
+│  • Jupyter Notebook (Python)  │
+│  • EDA e Feature Engineering  │
+│  • Modelagem (ML)             │
+│  • Explicabilidade (SHAP)     │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│        Persistence Layer      │
+│                               │
+│  • Exportação de Scoring      │
+│  • Azure SQL Database (PaaS)  │
+│  • Tabelas dimensionais       │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│     Analytics & BI Layer      │
+│                               │
+│  • Power BI                  │
+│  • Dashboards executivos     │
+│  • Segmentação por risco     │
+└───────────────────────────────┘
 
 
-Tecnologias Utilizadas
+
+## Tecnologias Utilizadas
 
 Python (Pandas, NumPy, Scikit-learn)
 
@@ -67,7 +88,7 @@ Ambiente: Jupyter Notebook + VS Code
 
 Versionamento: Git/GitHub
 
-Estrutura do Repositório
+## Estrutura do Repositório
 
 churn-portfolio/
 │
@@ -86,7 +107,7 @@ churn-portfolio/
 ├── requirements.txt
 └── README.md
 
-Resultados Principais
+## Resultados Principais
 
 Identificação clara de perfis com alto risco de churn
 
@@ -102,7 +123,7 @@ Técnicas de explicabilidade permitiram traduzir previsões em insights acionáv
 
 O modelo atua como ferramenta de priorização, auxiliando estratégias de retenção.
 
-Próximos Passos
+## Próximos Passos
 
 - Otimização de hiperparâmetros
 - Ajuste de threshold para maximizar recall de churn
@@ -110,12 +131,12 @@ Próximos Passos
 - Automatização de refresh no Power BI
 - Evolução para múltiplas execuções do modelo (histórico de scoring)
 
-Observações
+## Observações
 
 - Dados sensíveis e credenciais não são versionados neste repositório
 - Conexões com Azure SQL utilizam variáveis de ambiente
 - O CSV de scoring é gerado dinamicamente via notebook
 
-Autor
+## Autor
 
 Projeto desenvolvido para fins de portfólio em Ciência de Dados, com foco em aplicação prática, interpretação de resultados e integração com ferramentas corporativas.
