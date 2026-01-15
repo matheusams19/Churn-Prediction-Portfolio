@@ -88,7 +88,7 @@ Ambiente: Jupyter Notebook + VS Code
 
 Versionamento: Git/GitHub
 
-## Estrutura do Repositório
+## 📁 Estrutura do Repositório
 
 churn-portfolio/
 │
@@ -96,16 +96,16 @@ churn-portfolio/
 │   └── 01_churn_analysis.ipynb
 │
 ├── data/
-│   └── README.md        # descrição dos dados (sem CSV sensível)
+│   └── README.md          # descrição dos dados (sem CSV sensível)
 │
 ├── sql/
-│   └── README.md        # scripts e validações SQL
+│   └── README.md          # scripts e validações SQL
 │
 ├── dashboard/
-│   └── README.md        # descrição do dashboard Power BI
+│   └── README.md          # descrição do dashboard Power BI
 │
 ├── requirements.txt
-└── README.md
+└── README.m
 
 ## Resultados Principais
 
