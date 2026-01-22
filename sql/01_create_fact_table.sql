@@ -1,7 +1,3 @@
--- =====================================================
--- Script: 01_create_fact_table.sql
--- Descrição: Criação da tabela fato de churn scoring
--- =====================================================
 
 CREATE TABLE dbo.fact_churn_scoring (
     customerID           VARCHAR(50)   NOT NULL,
