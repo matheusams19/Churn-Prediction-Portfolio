@@ -1,0 +1,12 @@
+-- Taxa média de churn predita por grupo de tenure
+Predicted Churn Rate by Tenure =
+AVERAGE ( vw_churn_kpis_by_tenure[churn_rate] )
+
+-- Total de clientes por grupo de tenure
+Total Customers by Tenure =
+SUM ( vw_churn_kpis_by_tenure[total_customers] )
+
+-- Clientes em risco por grupo de tenure
+Churn Customers by Tenure =
+SUM ( vw_churn_kpis_by_tenure[churn_customers] )
+    

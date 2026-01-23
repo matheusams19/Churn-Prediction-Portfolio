@@ -1,0 +1,10 @@
+-- Receita total em risco de churn
+Revenue at Risk =
+SUM ( vw_churn_kpis_revenue_risk[revenue_at_risk] )
+
+-- Percentual da receita total que está em risco
+% Revenue at Risk =
+DIVIDE (
+    [Revenue at Risk],
+    SUM ( vw_churn_kpis_revenue_risk[total_monthly_revenue] )
+)

@@ -1,0 +1,11 @@
+-- Taxa média de churn predita por tipo de contrato
+Predicted Churn Rate by Contract =
+AVERAGE ( vw_churn_kpis_by_contract[churn_rate] )
+
+-- Total de clientes por contrato
+Total Customers by Contract =
+SUM ( vw_churn_kpis_by_contract[total_customers] )
+
+-- Total de clientes em risco por contrato
+Churn Customers by Contract =
+SUM ( vw_churn_kpis_by_contract[churn_customers] )

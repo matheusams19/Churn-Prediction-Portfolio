@@ -1,0 +1,15 @@
+-- Total de clientes na base
+Total Customers =
+SUM ( vw_churn_kpis_general[total_customers] )
+
+-- Total de clientes com risco de churn (predição)
+Predicted Churn Customers =
+SUM ( vw_churn_kpis_general[predicted_churn_customers] )
+
+-- Taxa média de churn predita
+Predicted Churn Rate =
+AVERAGE ( vw_churn_kpis_general[predicted_churn_rate] )
+
+-- Última data de execução do scoring
+Last Scoring Date =
+MAX ( vw_churn_kpis_general[last_scoring_date] )

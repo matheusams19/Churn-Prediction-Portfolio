@@ -1,0 +1,7 @@
+-- Check: churn rate ≈ churn_customers / total_customers
+Churn Rate (Check) =
+DIVIDE (
+    [Predicted Churn Customers],
+    [Total Customers]
+)
+    

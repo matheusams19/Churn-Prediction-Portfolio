@@ -1,0 +1,3 @@
+-- Taxa média de churn predita por método de pagamento
+Predicted Churn Rate by Payment Method =
+AVERAGE ( vw_churn_scoring_latest[pred_churn] )
