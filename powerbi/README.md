@@ -13,14 +13,6 @@ Esta pasta contém a camada analítica integrada no Power BI.
 - Predicted Churn Rate by Tenure Group
 - Predicted Churn Rate by Payment Method
 
-## Dashboard Overview
-
-![Dashboard Overview](powerbi/screenshots/dashboard_overview.png)
-
-## Key KPIs
-
-![KPIs](powerbi/screenshots/kpis_zoom.png)
-
 ### Filters
 - Contract Type
 - Tenure Group
