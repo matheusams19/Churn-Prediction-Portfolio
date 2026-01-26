@@ -58,6 +58,11 @@ Este projeto busca responder às seguintes perguntas:
 O projeto foi estruturado em camadas, simulando um fluxo real de apoio à decisão
 em um ambiente corporativo, desde a análise dos dados até a visualização executiva.
 
+<p align="center">
+  <img src="assets/architecture.png" width="800">
+</p>
+
+
 ### Visão Geral
 
 
