@@ -1,40 +1,57 @@
 # Churn-Prediction-Portfolio
-Churn prediction with Machine Learning, Azure SQL and Power BI
-Este projeto tem como objetivo identificar clientes com maior risco de churn em um negócio de assinatura, utilizando técnicas de Ciência de Dados e Machine Learning.
-Além da construção dos modelos preditivos, o projeto enfatiza interpretabilidade, integração com cloud (Azure SQL) e visualização executiva (Power BI), simulando um cenário corporativo real.
+**End-to-end churn prediction using Machine Learning, Azure SQL Database and Power BI**
 
-## Problema de Negócio
+Este projeto simula um cenário corporativo real de **retenção de clientes em negócios de assinatura**, combinando **Ciência de Dados**, **Cloud** e **Business Intelligence**.  
+O objetivo é **predizer churn**, gerar um **scoring por cliente**, persistir os resultados na **nuvem (Azure SQL)** e disponibilizar insights por meio de um **dashboard executivo (Power BI)**.
 
-Em empresas baseadas em assinatura, o churn impacta diretamente a receita recorrente.
-Dessa forma, o desafio é responder às seguintes perguntas:
+## 🎯 Problema de Negócio
+Em empresas baseadas em assinatura, o churn impacta diretamente a receita recorrente.  
+Este projeto busca responder às seguintes perguntas:
 
-- Quais clientes apresentam maior probabilidade de cancelamento?
-- Quais fatores influenciam o churn?
-- Como priorizar ações de retenção de forma eficiente?
-- O foco do projeto é apoiar decisões de negócio, e não apenas maximizar métricas técnicas.
+- Quais clientes apresentam **maior probabilidade de cancelamento**?
+- Quais fatores estão mais associados ao churn?
+- Como **priorizar ações de retenção** com base em risco e impacto financeiro?
 
-## Abordagem Analítica
+> O foco do projeto é **suporte à decisão de negócio**, e não apenas a otimização de métricas técnicas.
 
-O projeto foi desenvolvido seguindo um fluxo completo de Ciência de Dados:
 
-- Análise Exploratória (EDA)
-- Avaliação do desbalanceamento do churn
-- Análise de variáveis-chave (tenure, contrato, cobrança mensal)
-- Preparação dos Dados
-- Tratamento de valores ausentes
-- Padronização de variáveis
-- Pipeline de pré-processamento (numéricas e categóricas)
-- Modelagem Preditiva
-- Modelo baseline: Regressão Logística
-- Modelo robusto: Random Forest
-- Avaliação com métricas adequadas ao desbalanceamento (Recall, ROC-AUC)
+## 🧠 Abordagem Analítica (End-to-End)
+
+### 1️⃣ Data Science (Python / Notebook)
+- Análise Exploratória de Dados (EDA)
+  - Avaliação do desbalanceamento do churn
+  - Análise de variáveis-chave (tenure, tipo de contrato, cobrança mensal)
+- Preparação dos dados
+  - Tratamento de valores ausentes
+  - Padronização de variáveis
+  - Pipeline de pré-processamento (numéricas e categóricas)
+- Modelagem preditiva
+  - Modelo baseline: **Regressão Logística**
+  - Modelo robusto: **Random Forest**
+  - Avaliação com métricas adequadas ao desbalanceamento (Recall, ROC-AUC)
 - Explicabilidade
-- Importância das variáveis
-- Análise global com SHAP para interpretação do modelo
-- Entrega para Negócio
-- Exportação do scoring em CSV
-- Persistência em banco de dados na nuvem (Azure SQL Database)
-- Consumo via Power BI para visualização executiva
+  - Importância das variáveis
+  - Interpretação global com **SHAP**
+ 
+---
+
+### 2️⃣ Persistência em Cloud (Azure SQL Database)
+- Geração do **scoring de churn** por cliente
+- Exportação dos resultados via Python
+- Persistência no **Azure SQL Database (PaaS)**
+- Estruturação de:
+  - Tabela fato de scoring
+  - Views analíticas (KPIs) para consumo no BI
+
+---
+
+### 3️⃣ Camada Analítica e BI (Power BI)
+- Conexão direta com Azure SQL
+- Consumo de tabelas e views analíticas
+- Construção de dashboard executivo com foco em clareza e ação
+- Segmentações estratégicas para análise exploratória
+
+---
 
 ## 🧩 Arquitetura da Solução
 
@@ -43,36 +60,8 @@ em um ambiente corporativo, desde a análise dos dados até a visualização exe
 
 ### Visão Geral
 
-┌───────────────────────────────┐
-│        Data Science Layer     │
-│                               │
-│  • Jupyter Notebook (Python)  │
-│  • EDA e Feature Engineering  │
-│  • Modelagem (ML)             │
-│  • Explicabilidade (SHAP)     │
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│        Persistence Layer      │
-│                               │
-│  • Exportação de Scoring      │
-│  • Azure SQL Database (PaaS)  │
-│  • Tabelas dimensionais       │
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│     Analytics & BI Layer      │
-│                               │
-│  • Power BI                  │
-│  • Dashboards executivos     │
-│  • Segmentação por risco     │
-└───────────────────────────────┘
 
-
-
-## Tecnologias Utilizadas
+## 🛠️Tecnologias Utilizadas
 
 Python (Pandas, NumPy, Scikit-learn)
 
@@ -107,9 +96,9 @@ churn-portfolio/
 ├── requirements.txt
 └── README.m
 
-## Resultados Principais
+## 📈 Principais Resultados
 
-Identificação clara de perfis com alto risco de churn
+Identificação clara de clientes com alto risco de churn
 
 Forte relação entre churn e:
 
@@ -117,19 +106,25 @@ Forte relação entre churn e:
 - Contratos mensais
 - Maior cobrança mensal
 
-O modelo Random Forest apresentou melhor desempenho em relação ao baseline
+O modelo Random Forest apresentou melhor desempenho em relação ao baseline.
 
-Técnicas de explicabilidade permitiram traduzir previsões em insights acionáveis
+O scoring permite priorizar estratégias de retenção.
 
-O modelo atua como ferramenta de priorização, auxiliando estratégias de retenção.
+Explicabilidade (SHAP) transforma previsões em insights acionáveis.
 
-## Próximos Passos
+## 🚀 Próximos Passos
 
-- Otimização de hiperparâmetros
 - Ajuste de threshold para maximizar recall de churn
 - Criação de métricas orientadas à ação (lift, recall@k)
-- Automatização de refresh no Power BI
-- Evolução para múltiplas execuções do modelo (histórico de scoring)
+- Versionamento de múltiplas execuções do modelo (histórico de scoring)
+- Automatização de refresh e publicação do Power BI
+
+## 🔐 Segurança e Boas Práticas
+
+- Credenciais não são versionadas
+- Conexões com Azure SQL via variáveis de ambiente (.env)
+- Arquivos sensíveis excluídos do controle de versão
+- Estrutura preparada para execução em diferentes ambientes
 
 ## Observações
 
@@ -137,6 +132,11 @@ O modelo atua como ferramenta de priorização, auxiliando estratégias de reten
 - Conexões com Azure SQL utilizam variáveis de ambiente
 - O CSV de scoring é gerado dinamicamente via notebook
 
-## Autor
+## 👤 Autor
 
-Projeto desenvolvido para fins de portfólio em Ciência de Dados, com foco em aplicação prática, interpretação de resultados e integração com ferramentas corporativas.
+Projeto desenvolvido para fins de portfólio em Ciência de Dados, com foco em aplicação prática, interpretação de resultados e integração com ferramentas corporativas, com foco em:
+
+- Aplicação prática de Machine Learning
+- Integração com cloud (Azure)
+- Visualização executiva e tomada de decisão orientada a dados
+- Boas práticas de versionamento e segurança
