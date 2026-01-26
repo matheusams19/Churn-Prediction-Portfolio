@@ -96,7 +96,7 @@ churn-portfolio/
 ├── requirements.txt
 └── README.m
 
-##📈 Principais Resultados
+## 📈 Principais Resultados
 
 Identificação clara de clientes com alto risco de churn
 
