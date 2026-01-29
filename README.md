@@ -14,6 +14,12 @@ Este projeto busca responder às seguintes perguntas:
 
 > O foco do projeto é **suporte à decisão de negócio**, e não apenas a otimização de métricas técnicas.
 
+## 🧭 Como navegar neste projeto
+
+- 🔍 **EDA e Modelagem**: veja `notebooks/01_churn_analysis.ipynb`
+- 🗄️ **Persistência e KPIs**: scripts SQL em `sql/`
+- 📊 **Visualização executiva**: detalhes do dashboard em `dashboard/README.md`
+- ☁️ **Integração Cloud**: Azure SQL Database como camada de persistência
 
 ## 🧠 Abordagem Analítica (End-to-End)
 
@@ -58,6 +64,9 @@ Este projeto busca responder às seguintes perguntas:
 O projeto foi estruturado em camadas, simulando um fluxo real de apoio à decisão
 em um ambiente corporativo, desde a análise dos dados até a visualização executiva.
 
+<p align="center">
+  <img src="assets/architecture.png" width="800">
+</p>
 
 ## 🛠️Tecnologias Utilizadas
 
@@ -70,38 +79,65 @@ com foco em escalabilidade, interpretabilidade e tomada de decisão.
 
 ## 📁 Estrutura do Repositório
 
-churn-portfolio/
+```text
+churn-prediction-portfolio/
+│
+├── assets/
+│   ├── architecture.png          # Arquitetura da solução (Data → ML → SQL → BI)
+│   └── tech-stack.png            # Stack de tecnologias utilizadas
 │
 ├── notebooks/
-│   └── 01_churn_analysis.ipynb
+│   └── 01_churn_analysis.ipynb   # EDA, feature engineering, modelagem e SHAP
 │
-├── data/
-│   └── README.md          # descrição dos dados (sem CSV sensível)
+├── powerbi/
+│   │
+│   ├── DAX/
+│   │   ├── 01_kpis_general.dax          # KPIs gerais (customers, churn rate)
+│   │   ├── 02_kpis_revenue_at_risk.dax  # Receita em risco
+│   │   ├── 03_kpis_contract.dax         # Churn por tipo de contrato
+│   │   ├── 04_kpis_tenure.dax           # Churn por faixa de tenure
+│   │   ├── 05_kpis_payment_method.dax   # Churn por método de pagamento
+│   │   └── 06_validations_check.dax     # Medidas de validação (checks SQL vs BI)
+│   │
+│   ├── Screenshots/
+│   │   ├── dashboard_overview.png       # Visão geral do dashboard
+│   │   └── kpis_zoom.png                 # Detalhe dos KPIs
+│   │
+│   └── README.md                  # Explicação do dashboard e métricas
 │
 ├── sql/
-│   └── README.md          # scripts e validações SQL
+│   ├── 01_create_fact_table.sql   # Criação da tabela fato
+│   ├── 02_load_data.sql           # Carga dos dados (CSV → Azure SQL)
+│   ├── 03_view_scoring_latest.sql # View de scoring mais recente
+│   ├── 04_kpis_general.sql        # KPIs gerais
+│   ├── 05_kpis_contract.sql       # KPIs por contrato
+│   ├── 06_kpis_tenure.sql         # KPIs por tenure
+│   ├── 07_kpis_revenue_risk.sql   # KPIs de receita em risco
+│   └── 08_high_risk_customers.sql # Clientes de alto risco
 │
-├── dashboard/
-│   └── README.md          # descrição do dashboard Power BI
-│
-├── requirements.txt
-└── README.m
+├── requirements.txt               # Dependências Python
+└── README.md                      # Documentação principal do projeto
+
+```
 
 ## 📈 Principais Resultados
 
-Identificação clara de clientes com alto risco de churn
+Identificação clara de clientes com **alto risco de churn**
 
 Forte relação entre churn e:
+- Baixo tempo de permanência (**tenure**)
+- **Contratos mensais**
+- **Maior cobrança mensal**
 
-- Baixo tempo de permanência (tenure)
-- Contratos mensais
-- Maior cobrança mensal
+O modelo **Random Forest** apresentou melhor desempenho em relação ao baseline (Regressão Logística)
 
-O modelo Random Forest apresentou melhor desempenho em relação ao baseline.
+O scoring permite **priorizar estratégias de retenção** com base em risco e impacto financeiro
 
-O scoring permite priorizar estratégias de retenção.
+Técnicas de **explicabilidade (SHAP)** transformam previsões em insights acionáveis
 
-Explicabilidade (SHAP) transforma previsões em insights acionáveis.
+<p align="center">
+  <img src="powerbi/Screenshots/dashboard_overview.png" width="800">
+</p>
 
 ## 🚀 Próximos Passos
 
@@ -125,9 +161,11 @@ Explicabilidade (SHAP) transforma previsões em insights acionáveis.
 
 ## 👤 Autor
 
-Projeto desenvolvido para fins de portfólio em Ciência de Dados, com foco em aplicação prática, interpretação de resultados e integração com ferramentas corporativas, com foco em:
+**Matheus Saraiva**  
 
+Projeto desenvolvido para portfólio em Ciência de Dados, com foco em:
 - Aplicação prática de Machine Learning
-- Integração com cloud (Azure)
-- Visualização executiva e tomada de decisão orientada a dados
-- Boas práticas de versionamento e segurança
+- Integração com Cloud (Azure SQL)
+- Visualização executiva com Power BI
+- Comunicação clara de insights de negócio
+
