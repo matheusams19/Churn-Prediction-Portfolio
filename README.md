@@ -67,6 +67,9 @@ em um ambiente corporativo, desde a análise dos dados até a visualização exe
 O projeto utiliza um stack moderno de Ciência de Dados, Cloud e BI,
 com foco em escalabilidade, interpretabilidade e tomada de decisão.
 
+<p align="center">
+  <img src="assets/tech-stack.png" width="800">
+</p>
 
 ## 📁 Estrutura do Repositório
 
