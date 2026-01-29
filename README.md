@@ -80,24 +80,44 @@ com foco em escalabilidade, interpretabilidade e tomada de decisão.
 ## 📁 Estrutura do Repositório
 
 ```text
-churn-portfolio/
+churn-prediction-portfolio/
+│
+├── assets/
+│   ├── architecture.png          # Arquitetura da solução (Data → ML → SQL → BI)
+│   └── tech-stack.png            # Stack de tecnologias utilizadas
+│
 ├── notebooks/
-│   └── 01_churn_analysis.ipynb   # EDA, feature engineering e modelagem
-├── data/
-│   └── README.md                 # Descrição dos dados (sem CSV sensível)
+│   └── 01_churn_analysis.ipynb   # EDA, feature engineering, modelagem e SHAP
+│
+├── powerbi/
+│   │
+│   ├── DAX/
+│   │   ├── 01_kpis_general.dax          # KPIs gerais (customers, churn rate)
+│   │   ├── 02_kpis_revenue_at_risk.dax  # Receita em risco
+│   │   ├── 03_kpis_contract.dax         # Churn por tipo de contrato
+│   │   ├── 04_kpis_tenure.dax           # Churn por faixa de tenure
+│   │   ├── 05_kpis_payment_method.dax   # Churn por método de pagamento
+│   │   └── 06_validations_check.dax     # Medidas de validação (checks SQL vs BI)
+│   │
+│   ├── Screenshots/
+│   │   ├── dashboard_overview.png       # Visão geral do dashboard
+│   │   └── kpis_zoom.png                 # Detalhe dos KPIs
+│   │
+│   └── README.md                  # Explicação do dashboard e métricas
+│
 ├── sql/
-│   ├── 01_create_fact_table.sql
-│   ├── 02_load_data.sql
-│   ├── 03_view_scoring_latest.sql
-│   └── README.md                 # KPIs, views e validações SQL
-├── dashboard/
-│   └── README.md                 # Dashboard Power BI e métricas
-├── images/
-│   ├── architecture.png
-│   ├── tech-stack.png
-│   └── dashboard-preview.png
-├── requirements.txt
-└── README.md
+│   ├── 01_create_fact_table.sql   # Criação da tabela fato
+│   ├── 02_load_data.sql           # Carga dos dados (CSV → Azure SQL)
+│   ├── 03_view_scoring_latest.sql # View de scoring mais recente
+│   ├── 04_kpis_general.sql        # KPIs gerais
+│   ├── 05_kpis_contract.sql       # KPIs por contrato
+│   ├── 06_kpis_tenure.sql         # KPIs por tenure
+│   ├── 07_kpis_revenue_risk.sql   # KPIs de receita em risco
+│   └── 08_high_risk_customers.sql # Clientes de alto risco
+│
+├── requirements.txt               # Dependências Python
+└── README.md                      # Documentação principal do projeto
+
 ```
 
 ## 📈 Principais Resultados
@@ -114,6 +134,10 @@ O modelo **Random Forest** apresentou melhor desempenho em relação ao baseline
 O scoring permite **priorizar estratégias de retenção** com base em risco e impacto financeiro
 
 Técnicas de **explicabilidade (SHAP)** transformam previsões em insights acionáveis
+
+<p align="center">
+  <img src="powerbi/screenshots/dashboard-preview.png" width="800">
+</p>
 
 ## 🚀 Próximos Passos
 
