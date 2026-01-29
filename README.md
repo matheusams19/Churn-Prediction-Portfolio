@@ -14,6 +14,12 @@ Este projeto busca responder às seguintes perguntas:
 
 > O foco do projeto é **suporte à decisão de negócio**, e não apenas a otimização de métricas técnicas.
 
+## 🧭 Como navegar neste projeto
+
+- 🔍 **EDA e Modelagem**: veja `notebooks/01_churn_analysis.ipynb`
+- 🗄️ **Persistência e KPIs**: scripts SQL em `sql/`
+- 📊 **Visualização executiva**: detalhes do dashboard em `dashboard/README.md`
+- ☁️ **Integração Cloud**: Azure SQL Database como camada de persistência
 
 ## 🧠 Abordagem Analítica (End-to-End)
 
@@ -73,38 +79,41 @@ com foco em escalabilidade, interpretabilidade e tomada de decisão.
 
 ## 📁 Estrutura do Repositório
 
+```text
 churn-portfolio/
-│
 ├── notebooks/
-│   └── 01_churn_analysis.ipynb
-│
+│   └── 01_churn_analysis.ipynb   # EDA, feature engineering e modelagem
 ├── data/
-│   └── README.md          # descrição dos dados (sem CSV sensível)
-│
+│   └── README.md                 # Descrição dos dados (sem CSV sensível)
 ├── sql/
-│   └── README.md          # scripts e validações SQL
-│
+│   ├── 01_create_fact_table.sql
+│   ├── 02_load_data.sql
+│   ├── 03_view_scoring_latest.sql
+│   └── README.md                 # KPIs, views e validações SQL
 ├── dashboard/
-│   └── README.md          # descrição do dashboard Power BI
-│
+│   └── README.md                 # Dashboard Power BI e métricas
+├── images/
+│   ├── architecture.png
+│   ├── tech-stack.png
+│   └── dashboard-preview.png
 ├── requirements.txt
-└── README.m
+└── README.md
+```
 
 ## 📈 Principais Resultados
 
-Identificação clara de clientes com alto risco de churn
+Identificação clara de clientes com **alto risco de churn**
 
 Forte relação entre churn e:
+- Baixo tempo de permanência (**tenure**)
+- **Contratos mensais**
+- **Maior cobrança mensal**
 
-- Baixo tempo de permanência (tenure)
-- Contratos mensais
-- Maior cobrança mensal
+O modelo **Random Forest** apresentou melhor desempenho em relação ao baseline (Regressão Logística)
 
-O modelo Random Forest apresentou melhor desempenho em relação ao baseline.
+O scoring permite **priorizar estratégias de retenção** com base em risco e impacto financeiro
 
-O scoring permite priorizar estratégias de retenção.
-
-Explicabilidade (SHAP) transforma previsões em insights acionáveis.
+Técnicas de **explicabilidade (SHAP)** transformam previsões em insights acionáveis
 
 ## 🚀 Próximos Passos
 
@@ -128,9 +137,11 @@ Explicabilidade (SHAP) transforma previsões em insights acionáveis.
 
 ## 👤 Autor
 
-Projeto desenvolvido para fins de portfólio em Ciência de Dados, com foco em aplicação prática, interpretação de resultados e integração com ferramentas corporativas, com foco em:
+**Matheus Saraiva**  
 
+Projeto desenvolvido para portfólio em Ciência de Dados, com foco em:
 - Aplicação prática de Machine Learning
-- Integração com cloud (Azure)
-- Visualização executiva e tomada de decisão orientada a dados
-- Boas práticas de versionamento e segurança
+- Integração com Cloud (Azure SQL)
+- Visualização executiva com Power BI
+- Comunicação clara de insights de negócio
+
