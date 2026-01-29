@@ -58,12 +58,11 @@ Este projeto busca responder às seguintes perguntas:
 O projeto foi estruturado em camadas, simulando um fluxo real de apoio à decisão
 em um ambiente corporativo, desde a análise dos dados até a visualização executiva.
 
-<p align="center">
-  <img src="assets/architecture.png" width="800">
-</p>
-
 
 ## 🛠️Tecnologias Utilizadas
+
+O projeto utiliza um stack moderno de Ciência de Dados, Cloud e BI,
+com foco em escalabilidade, interpretabilidade e tomada de decisão.
 
 <p align="center">
   <img src="assets/tech-stack.png" width="800">
