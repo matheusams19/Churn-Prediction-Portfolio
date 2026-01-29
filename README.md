@@ -63,24 +63,11 @@ em um ambiente corporativo, desde a análise dos dados até a visualização exe
 </p>
 
 
-### Visão Geral
-
-
 ## 🛠️Tecnologias Utilizadas
 
-Python (Pandas, NumPy, Scikit-learn)
-
-Machine Learning (Logistic Regression, Random Forest)
-
-Explicabilidade (SHAP)
-
-Cloud: Azure SQL Database
-
-Visualização: Power BI
-
-Ambiente: Jupyter Notebook + VS Code
-
-Versionamento: Git/GitHub
+<p align="center">
+  <img src="assets/tech-stack.png" width="800">
+</p>
 
 ## 📁 Estrutura do Repositório
 
