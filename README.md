@@ -136,7 +136,7 @@ O scoring permite **priorizar estratégias de retenção** com base em risco e i
 Técnicas de **explicabilidade (SHAP)** transformam previsões em insights acionáveis
 
 <p align="center">
-  <img src="powerbi/screenshots/dashboard-preview.png" width="800">
+  <img src="powerbi/Screenshots/dashboard_overview.png" width="800">
 </p>
 
 ## 🚀 Próximos Passos
